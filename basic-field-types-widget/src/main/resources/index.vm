@@ -1,0 +1,28 @@
+<table>
+	<tbody>
+		<tr>
+			<td>Non required string:</td>
+			<td>$string_non_required</td>
+		</tr>
+		<tr>
+			<td>Required string:</td>
+			<td>$string_required</td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td>$email</td>
+		</tr>
+		<tr>
+			<td>Boolean:</td>
+			<td>$boolean</td>
+		</tr>
+		<tr>
+			<td>Integer:</td>
+			<td>$integer</td>
+		</tr>
+		<tr>
+			<td>Wiki:</td>
+			<td>$wiki</td>
+		</tr>
+	</tbody>
+</table>
