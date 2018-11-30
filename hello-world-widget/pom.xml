@@ -13,7 +13,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<cbPath>${cbLibPath}</cbPath>
+		<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
+		<cbPath>/home/szelei/Downloads/CB-9.3.0-PRE4/tomcat/webapps/cb/WEB-INF/lib/cb.jar</cbPath>
 	</properties>
 
 	<dependencies>
