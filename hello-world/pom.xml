@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<cbPath>/home/szelei/Downloads/CB-9.3.0-PRE4/tomcat/webapps/cb/WEB-INF/lib/cb.jar</cbPath>
+		<cbPath>{cbLibPath}</cbPath>
 	</properties>
 
 	<dependencies>
