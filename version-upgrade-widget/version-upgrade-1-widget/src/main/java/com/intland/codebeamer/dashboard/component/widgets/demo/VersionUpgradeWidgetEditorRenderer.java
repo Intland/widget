@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.intland.codebeamer.dashboard.component.common.RenderingContext;
-import com.intland.codebeamer.dashboard.component.common.RenderingContextAttribute;
 import com.intland.codebeamer.dashboard.component.common.RenderingContextFactory;
 import com.intland.codebeamer.dashboard.component.widgets.common.DefaultWidgetEditorRenderer;
 import com.intland.codebeamer.dashboard.component.widgets.common.ModelPopulator;
@@ -17,11 +15,11 @@ import com.intland.codebeamer.dashboard.component.widgets.common.editor.FormLayo
 import com.intland.codebeamer.utils.TemplateRenderer;
 
 @Component
-@Qualifier("basicFieldTypesWidgetEditorRenderer")
-public class BasicFieldTypesEditorRenderer extends DefaultWidgetEditorRenderer<BasicFieldTypesWidget> {
+@Qualifier("versionUpgradeWidgetEditorRenderer")
+public class VersionUpgradeWidgetEditorRenderer extends DefaultWidgetEditorRenderer<VersionUpgradeWidget> {
 
 	@Autowired
-	public BasicFieldTypesEditorRenderer(final ModelPopulator<VelocityContext> modelPopulator,
+	public VersionUpgradeWidgetEditorRenderer(final ModelPopulator<VelocityContext> modelPopulator,
 			final TemplateRenderer templateRenderer, final FormLayoutEditorFooter formLayoutEditorFooter,
 			final RenderingContextFactory renderingContextFactory) {
 		super(modelPopulator, templateRenderer, formLayoutEditorFooter, renderingContextFactory);
@@ -29,7 +27,7 @@ public class BasicFieldTypesEditorRenderer extends DefaultWidgetEditorRenderer<B
 	
 	@Override
 	protected Map<String, WidgetAttribute> getDescriptor() {
-		return BasicFieldTypesWidget.getDescriptor();
+		return VersionUpgradeWidget.getDescriptor();
 	}
 
 }
