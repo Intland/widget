@@ -1,7 +1,7 @@
 package com.intland.codebeamer.dashboard.component.widgets.demo;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -29,7 +29,7 @@ import com.intland.codebeamer.dashboard.component.widgets.demo.attribute.EmailAt
 public class BasicFieldTypesWidget extends AbstractWidget {
 
 	private static final Logger logger = Logger.getLogger(BasicFieldTypesWidget.class);
-	
+
 	private static final String VERSION = "1.0.0";
 
 	public static enum Attribute implements WidgetAttributeWrapper {
@@ -38,9 +38,10 @@ public class BasicFieldTypesWidget extends AbstractWidget {
 		EMAIL("email", new EmailAttribute(StringUtils.EMPTY)),
 		BOOLEAN("boolean", new BooleanAttribute(Boolean.TRUE, false, false)),
 		INTEGER("integer", new IntegerAttribute(Integer.valueOf(2), false, false)),
-		TEXT("wiki", new TextAttribute(StringUtils.EMPTY, false, false));
+		TEXT("markup", new TextAttribute(StringUtils.EMPTY, false, false));
 
 		private String key;
+
 		private WidgetAttribute<?> defaultValue;
 
 		private Attribute(String key, WidgetAttribute<?> defaultValue) {
@@ -55,11 +56,11 @@ public class BasicFieldTypesWidget extends AbstractWidget {
 		public WidgetAttribute<?> getDefaultValue() {
 			return defaultValue;
 		}
-		
+
 	}
 
 	public static Map<String, WidgetAttribute> getDescriptor() {
-		final Map<String, WidgetAttribute> result = new TreeMap<String, WidgetAttribute>();
+		final Map<String, WidgetAttribute> result = new LinkedHashMap<String, WidgetAttribute>();
 
 		result.put(Attribute.STRING_NON_REQUIRED.getKey(), Attribute.STRING_NON_REQUIRED.getDefaultValue());
 		result.put(Attribute.STRING_REQUIRED.getKey(), Attribute.STRING_REQUIRED.getDefaultValue());
@@ -75,12 +76,6 @@ public class BasicFieldTypesWidget extends AbstractWidget {
 	private final Renderer<BasicFieldTypesWidget> htmlRenderer;
 	private final Renderer<BasicFieldTypesWidget> editorRenderer;
 
-	/**
-	 * @param id
-	 * @param attributes
-	 * @param htmlRenderer
-	 * @param editorRenderer
-	 */
 	public BasicFieldTypesWidget(@JsonProperty("id") final String id,
 			@JsonProperty("attributes") final Map<String, WidgetAttribute> attributes,
 			@JacksonInject("basicFieldTypesWidgetHtmlRenderer") final Renderer<BasicFieldTypesWidget> htmlRenderer,

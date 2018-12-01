@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.intland.codebeamer.dashboard.component.common.RenderingContext;
+import com.intland.codebeamer.dashboard.component.common.RenderingContextAttribute;
 import com.intland.codebeamer.dashboard.component.common.RenderingContextFactory;
 import com.intland.codebeamer.dashboard.component.widgets.common.DefaultWidgetEditorRenderer;
 import com.intland.codebeamer.dashboard.component.widgets.common.ModelPopulator;
@@ -22,10 +24,9 @@ public class BasicFieldTypesEditorRenderer extends DefaultWidgetEditorRenderer<B
 	public BasicFieldTypesEditorRenderer(final ModelPopulator<VelocityContext> modelPopulator,
 			final TemplateRenderer templateRenderer, final FormLayoutEditorFooter formLayoutEditorFooter,
 			final RenderingContextFactory renderingContextFactory) {
-		super(modelPopulator, templateRenderer, formLayoutEditorFooter,
-				renderingContextFactory);
+		super(modelPopulator, templateRenderer, formLayoutEditorFooter, renderingContextFactory);
 	}
-
+	
 	@Override
 	protected Map<String, WidgetAttribute> getDescriptor() {
 		return BasicFieldTypesWidget.getDescriptor();

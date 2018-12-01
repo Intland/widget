@@ -21,8 +21,10 @@
 			<td>$integer</td>
 		</tr>
 		<tr>
-			<td>Wiki:</td>
-			<td>$wiki</td>
+			<td colspan="2">Wiki:</td>
+		</tr>
+		<tr>
+			<td colspan="2">$markup</td>
 		</tr>
 	</tbody>
 </table>
