@@ -1,0 +1,20 @@
+
+
+<table style="width: 100%">
+	<thead>
+		<tr>
+			<th>${textFormatter.getMessage('dashboard.recentlyChangedTrackerItems.widget.table.col.name')}</th>
+			<th>${textFormatter.getMessage('dashboard.recentlyChangedTrackerItems.widget.table.col.modifiedBy')}</th>
+			<th>${textFormatter.getMessage('dashboard.recentlyChangedTrackerItems.widget.table.col.modifiedAt')}</th>
+		</tr>
+	</thead>
+	<tbody>
+		#foreach($trackerItem in $trackerItems)
+		<tr>
+			<td>#linkReferableDto($trackerItem)</td>
+			<td style="text-align: center;">#linkUser($trackerItem.modifier)</td>
+			<td style="text-align: center;">$textFormatter.formatDate(currentUser, $trackerItem.modifiedAt, true)</td>
+		</tr>
+		#end
+	</tbody>
+</table>
