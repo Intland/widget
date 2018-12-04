@@ -41,6 +41,10 @@ public class BasicFieldTypesWidgetHtmlRenderer implements Renderer<BasicFieldTyp
 		context.put(BasicFieldTypesWidget.Attribute.BOOLEAN.getKey(), getAttributeValue(widget, BasicFieldTypesWidget.Attribute.BOOLEAN));
 		context.put(BasicFieldTypesWidget.Attribute.INTEGER.getKey(), getAttributeValue(widget, BasicFieldTypesWidget.Attribute.INTEGER));
 		context.put(BasicFieldTypesWidget.Attribute.TEXT.getKey(), convertToWiki(renderingContext, markup));
+		context.put(BasicFieldTypesWidget.Attribute.ENUM_CHOICE.getKey(), getAttributeValue(widget, BasicFieldTypesWidget.Attribute.ENUM_CHOICE));
+		context.put(BasicFieldTypesWidget.Attribute.BOOLEAN_CHOICE.getKey(), getAttributeValue(widget, BasicFieldTypesWidget.Attribute.BOOLEAN_CHOICE));
+		context.put(BasicFieldTypesWidget.Attribute.DATE_RANGE.getKey(), getAttributeValue(widget, BasicFieldTypesWidget.Attribute.DATE_RANGE));
+		context.put(BasicFieldTypesWidget.Attribute.USER.getKey(), getAttributeValue(widget, BasicFieldTypesWidget.Attribute.USER));
 		
         return render(renderingContext, context);
 	}

@@ -1,6 +1,8 @@
 package com.intland.codebeamer.dashboard.component.widgets.demo;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
@@ -18,11 +20,17 @@ import com.intland.codebeamer.dashboard.component.common.interfaces.Renderer;
 import com.intland.codebeamer.dashboard.component.widgets.common.AbstractWidget;
 import com.intland.codebeamer.dashboard.component.widgets.common.WidgetAttributeWrapper;
 import com.intland.codebeamer.dashboard.component.widgets.common.attribute.BooleanAttribute;
+import com.intland.codebeamer.dashboard.component.widgets.common.attribute.DateRangeAttribute;
+import com.intland.codebeamer.dashboard.component.widgets.common.attribute.FixedChoiceWidgetAttribute;
 import com.intland.codebeamer.dashboard.component.widgets.common.attribute.IntegerAttribute;
 import com.intland.codebeamer.dashboard.component.widgets.common.attribute.StringAttribute;
 import com.intland.codebeamer.dashboard.component.widgets.common.attribute.TextAttribute;
+import com.intland.codebeamer.dashboard.component.widgets.common.attribute.UserListAttribute;
 import com.intland.codebeamer.dashboard.component.widgets.common.attribute.WidgetAttribute;
+import com.intland.codebeamer.dashboard.component.widgets.common.attribute.choice.Display;
+import com.intland.codebeamer.dashboard.component.widgets.common.attribute.values.DateRange;
 import com.intland.codebeamer.dashboard.component.widgets.demo.attribute.EmailAttribute;
+import com.intland.codebeamer.dashboard.component.widgets.common.attribute.choice.Boolean;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonPropertyOrder(alphabetic = true)
@@ -36,10 +44,14 @@ public class BasicFieldTypesWidget extends AbstractWidget {
 		STRING_NON_REQUIRED("string_non_required", new StringAttribute("Non required string field", false, false)),
 		STRING_REQUIRED("string_required", new StringAttribute("Required string field", true, false)),
 		EMAIL("email", new EmailAttribute(StringUtils.EMPTY)),
-		BOOLEAN("boolean", new BooleanAttribute(Boolean.TRUE, false, false)),
+		BOOLEAN("boolean", new BooleanAttribute(java.lang.Boolean.TRUE, false, false)),
 		INTEGER("integer", new IntegerAttribute(Integer.valueOf(2), false, false)),
-		TEXT("markup", new TextAttribute(StringUtils.EMPTY, false, false));
-
+		TEXT("markup", new TextAttribute(StringUtils.EMPTY, false, false)),
+		ENUM_CHOICE("enum_choice", new FixedChoiceWidgetAttribute<Display>(Display.CHART, false, false)),
+		BOOLEAN_CHOICE("boolean_choice", new FixedChoiceWidgetAttribute<Boolean>(Boolean.TRUE, false, false)),
+		DATE_RANGE("date_range", new DateRangeAttribute(new DateRange("-1d", "0d"), false, false)),
+		USER("user_list", new UserListAttribute(new ArrayList<String>(0), false, false));
+		
 		private String key;
 
 		private WidgetAttribute<?> defaultValue;
@@ -67,8 +79,12 @@ public class BasicFieldTypesWidget extends AbstractWidget {
 		result.put(Attribute.EMAIL.getKey(), Attribute.EMAIL.getDefaultValue());
 		result.put(Attribute.BOOLEAN.getKey(), Attribute.BOOLEAN.getDefaultValue());
 		result.put(Attribute.INTEGER.getKey(), Attribute.INTEGER.getDefaultValue());
+		result.put(Attribute.ENUM_CHOICE.getKey(), Attribute.ENUM_CHOICE.getDefaultValue());
+		result.put(Attribute.BOOLEAN_CHOICE.getKey(), Attribute.BOOLEAN_CHOICE.getDefaultValue());
+		result.put(Attribute.DATE_RANGE.getKey(), Attribute.DATE_RANGE.getDefaultValue());
+		result.put(Attribute.USER.getKey(), Attribute.USER.getDefaultValue());
 		result.put(Attribute.TEXT.getKey(), Attribute.TEXT.getDefaultValue());
-
+		
 		return result;
 
 	}

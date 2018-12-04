@@ -21,6 +21,22 @@
 			<td>$integer</td>
 		</tr>
 		<tr>
+			<td>Enum choice:</td>
+			<td>$enum_choice</td>
+		</tr>
+		<tr>
+			<td>Boolean choice:</td>
+			<td>$boolean_choice</td>
+		</tr>
+		<tr>
+			<td>Date range:</td>
+			<td>$date_range</td>
+		</tr>
+		<tr>
+			<td>User list:</td>
+			<td>$user_list</td>
+		</tr>
+		<tr>
 			<td colspan="2">Wiki:</td>
 		</tr>
 		<tr>
