@@ -1,0 +1,16 @@
+<table style="width: 100%">
+	<thead>
+		<tr>
+			<th>Key</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		#foreach($pair in $pairs)
+		<tr>
+			<td>$pair.left</td>
+			<td style="text-align: center;">$pair.right</td>
+		</tr>
+		#end
+	</tbody>
+</table>
